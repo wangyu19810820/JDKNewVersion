@@ -33,6 +33,7 @@ class Monitor {
         this.price = price;
     }
 
+    // instanceof 类型 变量名的写法还可以应用到表达式中
     @Override
     public final boolean equals(Object o) {
         return o instanceof Monitor obj && obj.model.equals(model) && obj.price == price;

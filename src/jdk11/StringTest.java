@@ -17,7 +17,10 @@ public class StringTest {
         System.out.println(str1.stripTrailing());   // 去除尾部空格
         System.out.println("-------------------------");
 
+        // 新字符串，重复5次abc
         System.out.println("abc".repeat(5));
+
+        // 生成一个流，没个元素是一行
         "a\nb\nc".lines().forEach(System.out::println);
 
         try(FileInputStream fis = new FileInputStream("src/jdk11/StringTest.java")) {
