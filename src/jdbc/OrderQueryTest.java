@@ -7,8 +7,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class OrderQueryTest {
 
