@@ -61,7 +61,7 @@ public class PreparedStatementQueryTest {
 
     public <T> T getInstance(Class<T> tClass, String sql, Object...args) throws Exception {
         try (Connection connection = GetConnectionDemo.getConnection();
-             PreparedStatement statement = connection.prepareStatement(sql)) {
+                PreparedStatement statement = connection.prepareStatement(sql)) {
             for (int i = 0; i < args.length; i++) {
                 statement.setObject(i + 1, args[i]);
             }

@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.io.*;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class BlobTest {
@@ -32,7 +33,7 @@ public class BlobTest {
                     int id = rs.getInt("id");
                     String email = rs.getString("email");
                     String name = rs.getString("name");
-                    Date date = new Date(rs.getDate("birth").getTime());
+                    Date date = (Date)rs.getObject("birth");
                     Customer customer = new Customer(id, name, email, date);
                     System.out.println(customer);
                     Blob photo = rs.getBlob("photo");

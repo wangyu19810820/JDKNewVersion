@@ -16,6 +16,12 @@ public class Customer {
         this.birth = birth;
     }
 
+    public Customer(String name, String email, Date birth) {
+        this.name = name;
+        this.email = email;
+        this.birth = birth;
+    }
+
     public Customer() {
     }
 

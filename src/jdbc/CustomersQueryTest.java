@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class CustomersQueryTest {
@@ -20,7 +21,8 @@ public class CustomersQueryTest {
                     int id = rs.getInt(1);
                     String name = rs.getString(2);
                     String email = rs.getString(3);
-                    Date birth = new Date(rs.getDate(4).getTime());
+                    Date birth = (Date) rs.getObject(4);
+                    LocalDate birthDay = rs.getObject(4, LocalDate.class);
                     Customer customer = new Customer(id, name, email, birth);
                     System.out.println(customer);
                 }
