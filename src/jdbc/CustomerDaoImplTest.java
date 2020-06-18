@@ -13,16 +13,16 @@ public class CustomerDaoImplTest {
 
     @Test
     public void insert() throws Exception {
-        Connection connection = GetConnectionDemo.getConnection();
+        Connection connection = GetConnectionDemo.getConnection3();
         try (connection) {
-            Customer customer = new Customer("abc", "abc@sina.com", LocalDate.now());
+            Customer customer = new Customer("abc", "abc@sina.com", new Date());
             dao.insert(connection, customer);
         }
     }
 
     @Test
     public void deleteById() throws Exception {
-        Connection connection = GetConnectionDemo.getConnection();
+        Connection connection = GetConnectionDemo.getConnection3();
         try (connection) {
             dao.deleteById(connection, 5);
         }
@@ -30,16 +30,16 @@ public class CustomerDaoImplTest {
 
     @Test
     public void update() throws Exception {
-        Connection connection = GetConnectionDemo.getConnection();
+        Connection connection = GetConnectionDemo.getConnection3();
         try (connection) {
-            Customer customer = new Customer(6,"abcd", "abcd@sina.com", LocalDate.now());
+            Customer customer = new Customer(6,"abcd", "abcd@sina.com", new Date());
             dao.update(connection, customer);
         }
     }
 
     @Test
     public void getCustomerById() throws Exception {
-        Connection connection = GetConnectionDemo.getConnection();
+        Connection connection = GetConnectionDemo.getConnection3();
         try (connection) {
             Customer customer = dao.getCustomerById(connection, 6);
             System.out.println(customer);
@@ -48,7 +48,7 @@ public class CustomerDaoImplTest {
 
     @Test
     public void getAll() throws Exception {
-        Connection connection = GetConnectionDemo.getConnection();
+        Connection connection = GetConnectionDemo.getConnection3();
         try (connection) {
             List<Customer> customerList = dao.getAll(connection);
             System.out.println(customerList);
@@ -57,7 +57,7 @@ public class CustomerDaoImplTest {
 
     @Test
     public void getCount() throws Exception {
-        Connection connection = GetConnectionDemo.getConnection();
+        Connection connection = GetConnectionDemo.getConnection3();
         try (connection) {
             Long count = dao.getCount(connection);
             System.out.println(count);
@@ -66,7 +66,7 @@ public class CustomerDaoImplTest {
 
     @Test
     public void getMaxBirth() throws Exception {
-        Connection connection = GetConnectionDemo.getConnection();
+        Connection connection = GetConnectionDemo.getConnection3();
         try (connection) {
             Date date = dao.getMaxBirth(connection);
             System.out.println(date);

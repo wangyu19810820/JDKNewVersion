@@ -1,6 +1,5 @@
 package jdbc;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 public class Customer {
@@ -8,16 +7,16 @@ public class Customer {
     private int id;
     private String name;
     private String email;
-    private LocalDate birth;
+    private Date birth;
 
-    public Customer(int id, String name, String email, LocalDate birth) {
+    public Customer(int id, String name, String email, Date birth) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.birth = birth;
     }
 
-    public Customer(String name, String email, LocalDate birth) {
+    public Customer(String name, String email, Date birth) {
         this.name = name;
         this.email = email;
         this.birth = birth;
@@ -50,11 +49,11 @@ public class Customer {
         this.email = email;
     }
 
-    public LocalDate getBirth() {
+    public Date getBirth() {
         return birth;
     }
 
-    public void setBirth(LocalDate birth) {
+    public void setBirth(Date birth) {
         this.birth = birth;
     }
 

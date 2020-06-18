@@ -33,7 +33,7 @@ public class BlobTest {
                     int id = rs.getInt("id");
                     String email = rs.getString("email");
                     String name = rs.getString("name");
-                    LocalDate date = rs.getObject("birth", LocalDate.class);
+                    Date date = (Date) rs.getObject("birth");
                     Customer customer = new Customer(id, name, email, date);
                     System.out.println(customer);
                     Blob photo = rs.getBlob("photo");

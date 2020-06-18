@@ -2,14 +2,25 @@ package jdbc;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public interface BaseDao {
+public abstract class BaseDao<T> {
 
-    default int executeUpdate(Connection connection, String sql, Object... args) throws Exception {
+    private final Class<T> tClass;
+
+    protected BaseDao() {
+        Type genericSuperClass = this.getClass().getGenericSuperclass();
+        ParameterizedType paramType = (ParameterizedType) genericSuperClass;
+        Type[] typeArgs = paramType.getActualTypeArguments();
+        tClass = (Class<T>)typeArgs[0];
+    }
+
+    protected int executeUpdate(Connection connection, String sql, Object... args) throws Exception {
         try(PreparedStatement statement = connection.prepareStatement(sql)) {
             for(int i = 0; i < args.length; i++) {
                 statement.setObject(i + 1, args[i]);
@@ -18,7 +29,7 @@ public interface BaseDao {
         }
     }
 
-    default <T> T getInstance(Connection connection, Class<T> tClass, String sql, Object...args) throws Exception {
+    protected T getInstance(Connection connection, String sql, Object...args) throws Exception {
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             for (int i = 0; i < args.length; i++) {
                 statement.setObject(i + 1, args[i]);
@@ -53,7 +64,7 @@ public interface BaseDao {
         }
     }
 
-    default <T> List<T> getForList(Connection connection, Class<T> tClass, String sql, Object...args) throws Exception {
+    protected List<T> getForList(Connection connection, String sql, Object...args) throws Exception {
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             if (args != null) {
                 for (int i = 0; i < args.length; i++) {
@@ -68,10 +79,20 @@ public interface BaseDao {
                     T result = tClass.getDeclaredConstructor().newInstance();
                     for (int i = 0; i < columnCount; i++) {
                         Object value = rs.getObject(i + 1);
+                        LocalDate date = null;
+                        int type = rsmd.getColumnType(i + 1);
+                        if (type == Types.DATE) {
+                            date = rs.getObject(i + 1, LocalDate.class);
+                        }
                         String columnLabel = rsmd.getColumnLabel(i + 1);
                         Field field = tClass.getDeclaredField(columnLabel);
+                        Class fieldType = field.getType();
                         field.setAccessible(true);
-                        field.set(result, value);
+                        if (fieldType == LocalDate.class){
+                            field.set(result, date);
+                        } else {
+                            field.set(result, value);
+                        }
                     }
                     list.add(result);
                 }
@@ -80,7 +101,7 @@ public interface BaseDao {
         }
     }
 
-    default <T> T getValue(Connection connection, String sql, Object...args) throws Exception {
+    protected <U> U getValue(Connection connection, String sql, Object...args) throws Exception {
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             if (args != null) {
                 for (int i = 0; i < args.length; i++) {
@@ -89,7 +110,7 @@ public interface BaseDao {
             }
             try (ResultSet rs = statement.executeQuery()) {
                 if (rs.next()) {
-                    return (T) rs.getObject(1);
+                    return (U) rs.getObject(1);
                 } else {
                     return null;
                 }

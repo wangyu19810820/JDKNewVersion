@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.util.List;
 
-public class CustomerDaoImpl implements BaseDao, CustomerDao {
+public class CustomerDaoImpl extends BaseDao<Customer> implements CustomerDao {
 
     @Override
     public void insert(Connection connection, Customer customer) throws Exception {
@@ -27,13 +27,13 @@ public class CustomerDaoImpl implements BaseDao, CustomerDao {
     @Override
     public Customer getCustomerById(Connection connection, int id) throws Exception {
         String sql = "select id, name, email, birth from customers where id = ?";
-        return getInstance(connection, Customer.class, sql, id);
+        return getInstance(connection, sql, id);
     }
 
     @Override
     public List<Customer> getAll(Connection connection) throws Exception {
         String sql = "select id, name, email, birth from customers";
-        return getForList(connection, Customer.class, sql);
+        return getForList(connection, sql);
     }
 
     @Override

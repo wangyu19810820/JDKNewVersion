@@ -23,7 +23,7 @@ public class CustomersQueryTest {
                     String email = rs.getString(3);
                     Date birth = (Date) rs.getObject(4);
                     LocalDate birthDay = rs.getObject(4, LocalDate.class);
-                    Customer customer = new Customer(id, name, email, birthDay);
+                    Customer customer = new Customer(id, name, email, birth);
                     System.out.println(customer);
                 }
             }
