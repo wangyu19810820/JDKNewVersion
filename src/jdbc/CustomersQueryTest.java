@@ -23,7 +23,7 @@ public class CustomersQueryTest {
                     String email = rs.getString(3);
                     Date birth = (Date) rs.getObject(4);
                     LocalDate birthDay = rs.getObject(4, LocalDate.class);
-                    Customer customer = new Customer(id, name, email, birth);
+                    Customer customer = new Customer(id, name, email, birthDay);
                     System.out.println(customer);
                 }
             }
@@ -54,10 +54,20 @@ public class CustomersQueryTest {
                     Customer customer = new Customer();
                     for (int i = 0; i < columnCount; i++) {
                         Object value = rs.getObject(i + 1);
-                        String columnName = rsmd.getColumnName(i + 1);
-                        Field field = Customer.class.getDeclaredField(columnName);
+                        LocalDate date = null;
+                        int type = rsmd.getColumnType(i + 1);
+                        if (type == Types.DATE) {
+                            date = rs.getObject(i + 1, LocalDate.class);
+                        }
+                        String columnLabel = rsmd.getColumnLabel(i + 1);
+                        Field field = Customer.class.getDeclaredField(columnLabel);
+                        Class fieldType = field.getType();
                         field.setAccessible(true);
-                        field.set(customer, value);
+                        if (fieldType == LocalDate.class){
+                            field.set(customer, date);
+                        } else {
+                            field.set(customer, value);
+                        }
                     }
                     return customer;
                 } else {

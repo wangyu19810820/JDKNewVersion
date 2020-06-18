@@ -15,7 +15,7 @@ public class CustomerDaoImplTest {
     public void insert() throws Exception {
         Connection connection = GetConnectionDemo.getConnection();
         try (connection) {
-            Customer customer = new Customer("abc", "abc@sina.com", new Date());
+            Customer customer = new Customer("abc", "abc@sina.com", LocalDate.now());
             dao.insert(connection, customer);
         }
     }
@@ -32,7 +32,7 @@ public class CustomerDaoImplTest {
     public void update() throws Exception {
         Connection connection = GetConnectionDemo.getConnection();
         try (connection) {
-            Customer customer = new Customer(6,"abcd", "abcd@sina.com", new Date());
+            Customer customer = new Customer(6,"abcd", "abcd@sina.com", LocalDate.now());
             dao.update(connection, customer);
         }
     }

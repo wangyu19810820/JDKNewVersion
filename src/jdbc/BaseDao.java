@@ -3,6 +3,7 @@ package jdbc;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,10 +30,20 @@ public interface BaseDao {
                     T result = tClass.getDeclaredConstructor().newInstance();
                     for (int i = 0; i < columnCount; i++) {
                         Object value = rs.getObject(i + 1);
+                        LocalDate date = null;
+                        int type = rsmd.getColumnType(i + 1);
+                        if (type == Types.DATE) {
+                            date = rs.getObject(i + 1, LocalDate.class);
+                        }
                         String columnLabel = rsmd.getColumnLabel(i + 1);
                         Field field = tClass.getDeclaredField(columnLabel);
+                        Class fieldType = field.getType();
                         field.setAccessible(true);
-                        field.set(result, value);
+                        if (fieldType == LocalDate.class){
+                            field.set(result, date);
+                        } else {
+                            field.set(result, value);
+                        }
                     }
                     return result;
                 } else {
