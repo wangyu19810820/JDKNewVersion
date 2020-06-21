@@ -9,18 +9,21 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseDao<T> {
+public interface BaseDao<T> {
 
-    private final Class<T> tClass;
-
-    protected BaseDao() {
-        Type genericSuperClass = this.getClass().getGenericSuperclass();
-        ParameterizedType paramType = (ParameterizedType) genericSuperClass;
-        Type[] typeArgs = paramType.getActualTypeArguments();
-        tClass = (Class<T>)typeArgs[0];
+    private Class<T> gettClass() {
+        Type[] genericSuperClass = this.getClass().getGenericInterfaces();
+        for(Type type : genericSuperClass) {
+            if (type.getTypeName().startsWith("jdbc.BaseDao")) {
+                ParameterizedType paramType = (ParameterizedType) type;
+                Type[] typeArgs = paramType.getActualTypeArguments();
+                return (Class<T>) typeArgs[0];
+            }
+        }
+        return null;
     }
 
-    protected int executeUpdate(Connection connection, String sql, Object... args) throws Exception {
+    default int executeUpdate(Connection connection, String sql, Object... args) throws Exception {
         try(PreparedStatement statement = connection.prepareStatement(sql)) {
             for(int i = 0; i < args.length; i++) {
                 statement.setObject(i + 1, args[i]);
@@ -29,7 +32,7 @@ public abstract class BaseDao<T> {
         }
     }
 
-    protected T getInstance(Connection connection, String sql, Object...args) throws Exception {
+    default T getInstance(Connection connection, String sql, Object...args) throws Exception {
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             for (int i = 0; i < args.length; i++) {
                 statement.setObject(i + 1, args[i]);
@@ -38,7 +41,7 @@ public abstract class BaseDao<T> {
                 ResultSetMetaData rsmd = rs.getMetaData();
                 int columnCount = rsmd.getColumnCount();
                 if (rs.next()) {
-                    T result = tClass.getDeclaredConstructor().newInstance();
+                    T result = gettClass().getDeclaredConstructor().newInstance();
                     for (int i = 0; i < columnCount; i++) {
                         Object value = rs.getObject(i + 1);
                         LocalDate date = null;
@@ -47,7 +50,7 @@ public abstract class BaseDao<T> {
                             date = rs.getObject(i + 1, LocalDate.class);
                         }
                         String columnLabel = rsmd.getColumnLabel(i + 1);
-                        Field field = tClass.getDeclaredField(columnLabel);
+                        Field field = gettClass().getDeclaredField(columnLabel);
                         Class fieldType = field.getType();
                         field.setAccessible(true);
                         if (fieldType == LocalDate.class){
@@ -64,7 +67,7 @@ public abstract class BaseDao<T> {
         }
     }
 
-    protected List<T> getForList(Connection connection, String sql, Object...args) throws Exception {
+    default List<T> getForList(Connection connection, String sql, Object...args) throws Exception {
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             if (args != null) {
                 for (int i = 0; i < args.length; i++) {
@@ -76,7 +79,7 @@ public abstract class BaseDao<T> {
                 int columnCount = rsmd.getColumnCount();
                 List<T> list = new ArrayList<>();
                 while (rs.next()) {
-                    T result = tClass.getDeclaredConstructor().newInstance();
+                    T result = gettClass().getDeclaredConstructor().newInstance();
                     for (int i = 0; i < columnCount; i++) {
                         Object value = rs.getObject(i + 1);
                         LocalDate date = null;
@@ -85,7 +88,7 @@ public abstract class BaseDao<T> {
                             date = rs.getObject(i + 1, LocalDate.class);
                         }
                         String columnLabel = rsmd.getColumnLabel(i + 1);
-                        Field field = tClass.getDeclaredField(columnLabel);
+                        Field field = gettClass().getDeclaredField(columnLabel);
                         Class fieldType = field.getType();
                         field.setAccessible(true);
                         if (fieldType == LocalDate.class){
@@ -101,7 +104,7 @@ public abstract class BaseDao<T> {
         }
     }
 
-    protected <U> U getValue(Connection connection, String sql, Object...args) throws Exception {
+    default <U> U getValue(Connection connection, String sql, Object...args) throws Exception {
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             if (args != null) {
                 for (int i = 0; i < args.length; i++) {

@@ -1,10 +1,12 @@
 package jdbc;
 
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.sql.Connection;
 import java.sql.Date;
 import java.util.List;
 
-public class CustomerDaoImpl extends BaseDao<Customer> implements CustomerDao {
+public class CustomerDaoImpl implements  BaseDao<Customer>, CustomerDao {
 
     @Override
     public void insert(Connection connection, Customer customer) throws Exception {
