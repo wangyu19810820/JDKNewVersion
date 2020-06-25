@@ -9,7 +9,9 @@ public class WindowTest {
 
         Runnable runnable = () -> {
             while (true) {
-                synchronized (object) {
+//                synchronized (object) {
+                // 可以考虑用类作为锁
+                synchronized (WindowTest.class) {
                     if (ticket > 0) {
                         try {
                             Thread.sleep(100);
