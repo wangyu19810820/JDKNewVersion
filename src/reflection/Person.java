@@ -1,6 +1,9 @@
 package reflection;
 
-public class Person {
+import java.io.IOException;
+
+@MyAnnotation
+public class Person extends Creature<String> implements Comparable<Person> {
     private String name;
     public int age;
 
@@ -40,12 +43,21 @@ public class Person {
                 '}';
     }
 
+    @MyAnnotation()
+    @Override
     public void show() {
         System.out.println("我是一个人");
     }
 
-    private String showNation(String nation) {
-        System.out.println("我的国籍是：" + nation);
+    @MyAnnotation("abc")
+    private String showNation(String nation, String... language)
+            throws IOException, RuntimeException {
+        System.out.println("我的国籍是：" + nation + ",语言是：" + language);
         return nation;
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return Integer.compare(this.age, o.age);
     }
 }
