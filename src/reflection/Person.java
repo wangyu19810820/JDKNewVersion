@@ -1,6 +1,7 @@
 package reflection;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 @MyAnnotation
 public class Person extends Creature<String> implements Comparable<Person> {
@@ -49,10 +50,14 @@ public class Person extends Creature<String> implements Comparable<Person> {
         System.out.println("我是一个人");
     }
 
+    public static void display() {
+        System.out.println("我是一个可爱的人");
+    }
+
     @MyAnnotation("abc")
     private String showNation(String nation, String... language)
             throws IOException, RuntimeException {
-        System.out.println("我的国籍是：" + nation + ",语言是：" + language);
+        System.out.println("我的国籍是：" + nation + ",语言是：" + Arrays.toString(language));
         return nation;
     }
 
