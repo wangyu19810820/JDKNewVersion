@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1 {
+            border: 10px solid red;
+            /* 开启BFC解决高度塌陷的问题 */
+            /* float: left; */
+            /*display: inline-block;*/
+            overflow: auto;
+        }
+        .div2 {
+            height: 100px;
+            width: 100px;
+            background-color: #bbffaa;
+            float: left;
+        }
+        .div3 {
+            height: 200px;
+            width: 200px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <div class="div2"></div>
+    </div>
+    <div class="div3"></div>
+</body>
+</html>

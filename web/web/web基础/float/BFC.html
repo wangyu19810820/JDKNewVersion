@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1 {
+            height: 100px;
+            width: 100px;
+            background-color: #bbffaa;
+            float: left;
+        }
+        .div2 {
+            height: 100px;
+            width: 100px;
+            background-color: tomato;
+            /* overflow: hidden开启BFC，不再被浮动元素遮挡 */
+            overflow: hidden;
+        }
+        .div3 {
+            height: 200px;
+            width: 200px;
+            background-color: #bbffaa;
+            /* overflow: hidden开启BFC，子元素的上外边距不再传递到父元素 */
+            overflow: hidden;
+        }
+        .div4 {
+            height: 100px;
+            width: 100px;
+            background-color: tomato;
+            margin-top: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+
+    <div class="div3">
+        <div class="div4"></div>
+    </div>
+</body>
+</html>

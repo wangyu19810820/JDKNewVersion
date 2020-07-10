@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bbffaa;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin-top: 100px;
+        }
+
+        .box3 {
+            border: 10px solid red;
+        }
+
+        .box4 {
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+            float: left;
+        }
+
+        /* 既解决上边距重叠，又解决浮动后高度塌陷 */
+        .clearfix::before, .clearfix::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1 clearfix">
+        <div class="box2"></div>
+    </div>
+
+    <div class="box3 clearfix">
+        <div class="box4"></div>
+    </div>
+</body>
+</html>
