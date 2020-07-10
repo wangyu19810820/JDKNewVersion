@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #p1 {
+            background-color: red;
+        }
+        .d1 {
+            background-color: blue;
+        }
+        .d2 {
+            background-color: blueviolet;
+        }
+        p {
+            background-color: green !important;
+            font-size: 20px;
+        }
+        p#p1 {
+            background-color: yellow;
+        }
+        * {
+            font-size: 30px;
+        }
+        /* 
+            优先级从高到低：内联 > id > class > 元素 > 通配 > 继承
+            交集选择器优先级，是各个选择器之和
+            优先级相同，则后写的样式覆盖先写的样式
+            !important 可以使其变为最高优先级
+        */
+    </style>
+</head>
+<body>
+    
+    <p id="p1" class="d1 d2">11111111111111111<span>22222222222222</span></p>
+</body>
+</html>

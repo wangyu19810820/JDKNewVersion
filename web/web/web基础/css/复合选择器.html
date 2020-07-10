@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 交集选择器 */
+        h1.red {
+            color: red;
+        }
+        .a.b.c {
+            color: blue;
+        }
+
+        /* 选择器分组，并行选择器 */
+        h1,h2,p.red,.a.b.c {
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="red">11111111111111</h1>
+    <h2>22222222222222</h2>
+    <p class="a b c">3333333333333333</p>
+    <p class="red">3333333333333333</p>
+    <p>3333333333333333</p>
+    <p>3333333333333333</p>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div的子元素span */
+        div > span {
+            color:orange;
+        }
+
+        /* div后代元素span */
+        div span {
+            font-size: 30px;
+        }
+
+        /* div子元素p的子元素span */
+        div > p > span {
+            color:red;
+        }
+
+        /* p下一个兄弟元素 */
+        p + span {
+            background-color: black;
+        }
+
+        /* p之后的所有兄弟元素 */
+        p ~ span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        我是一个div
+        <span>在div中的另一个span元素</span>
+        <p>
+            我是一个p
+            <span>在p元素中的span元素</span>
+            
+        </p>
+
+        <span>在div中的span元素</span>
+        <span>在div中的另一个span元素</span>
+    </div>
+</body>
+</html>

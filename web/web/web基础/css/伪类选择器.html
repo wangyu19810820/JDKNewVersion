@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ul下第一个li */
+        ul > li:first-child {
+            color:red;
+        }
+
+        /* ul下最后一个li */
+        ul > li:last-child {
+            color: yellow;
+        }
+
+        /* ul下第二个li */
+        ul > li:nth-child(2) {
+            font-size: 30px;
+        }
+
+        /* ul下第1个到最后一个li */
+        ul > li:nth-child(n) {
+            font-style: italic;
+        }
+
+        /* ul下奇数个数li */
+        ul > li:nth-child(odd) {
+            background-color: blanchedalmond;
+        }
+
+        /* ul下偶数个数的li */
+        ul > li:nth-child(even) {
+            background-color: aqua;
+        }
+
+        /* ul下的li，除了第三个 */
+        ul > li:not(:nth-child(3)) {
+            font-weight: bold;
+        }
+
+        /* ol下同类型第一个li */
+        ol > li:first-of-type {
+            color:red;
+        }
+
+        /* ol下同类型最后一个li */
+        ol > li:last-of-type {
+            color:yellow;
+        }
+
+        /* ol下同类型第二个li */
+        ol > li:nth-of-type(2) {
+            font-size: 30px;
+        }
+
+        /* ol下同类型第1个到最后一个li */
+        ol > li:nth-of-type(n) {
+            font-style: italic;
+        }
+
+        /* ol下同类型奇数个数li */
+        ol > li:nth-of-type(2n + 1) {
+            background-color: blanchedalmond;
+        }
+
+        /* ol下同类型偶数个数的li */
+        ol > li:nth-of-type(2n) {
+            background-color: aqua;
+        }
+
+        /* ol下所有li，除了同类型第3个 */
+        ol > li:not(:nth-of-type(3)) {
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <ul>
+        <li>第一个</li>
+        <li>第二个</li>
+        <li>第三个</li>
+        <li>第四个</li>
+        <li>第五个</li>
+    </ul>
+
+    <ol>
+        <span>span</span>
+        <li>第一个</li>
+        <li>第二个</li>
+        <li>第三个</li>
+        <li>第四个</li>
+        <li>第五个</li>
+    </ol>
+
+</body>
+</html>

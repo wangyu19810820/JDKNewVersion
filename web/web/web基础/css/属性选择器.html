@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 含有title属性的p标签 */
+        p[title] {
+            color:orange;
+        }
+
+        /* title属性值是abc的p标签 */
+        p[title=abc] {
+            font-size: 30px;
+        }
+
+        /* title属性值以abc开头的p标签 */
+        p[title^=abc] {
+            background-color: black;
+        }
+
+        /* title属性值以abc结尾的p标签 */
+        p[title$=abc] {
+            font-weight: bold;
+        }
+
+        /* title属性中包含e的p标签 */
+        p[title*=e] {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <p title="abc">1111111111111111111111111111</p>
+    <p title="abcefg">1111111111111111111111111111</p>
+    <p title="helloabc">1111111111111111111111111111</p>
+    <p>1111111111111111111111111111</p>
+    <p>1111111111111111111111111111</p>
+</body>
+</html>

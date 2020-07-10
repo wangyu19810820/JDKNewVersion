@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            float: left;
+            /* 浮动不会盖住文字，文字会环绕浮动块 */
+        }
+
+        .box2 {
+            float: left;
+            /* 浮动后，默认宽高是内容大小 */
+            background-color: orange;
+        }
+
+        .s1 {
+            float: left;
+            /* 浮动后，行内元素可以指定宽和高了 */
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <p>定义：box-shadow是css3新增的一个属性。在W3School里，定义box-shadow是向框添加一个或者多个阴影的属性。 语法：box-shadow: h-shadow v-shadow blur spread color inset.  h-shadow: 阴影的水平位置 v-shadow：阴影的垂直位置 blur：阴影的模糊半径 spread：阴影的半径 color：阴影的颜色 inset：将外部阴影改成内部阴影【outset反过来】 根据box-shadow的定义，我们可以为一个框设置一个阴影，也可以设置多个阴影。
+        当我们需要设置多个阴影时，中间需要将每个阴影用逗号隔开。
+        举个例子：
+        /*html代码*/ 
+        /*对应的css代码*/ 
+        .test{ 
+          width: 100px; 
+          height: 100px; 
+          background: yellow; 
+          margin: 100px auto; 
+          border-radius: 50%; 
+          box-shadow: 10px 10px 20px 10px rgba(255,255,0,0.5), -10px 10px 10px 10px rgba(255,255,255,0.5) 
+        } 
+        这里我们用border-radius属性设置了一个圆形，并且为这个圆形添加了一个浅黄色阴影和一个白色的阴影。
+        以第一个阴影：box-shadow: 10px 10px 20px 10px rgba(255,255,0,0.5)为例：
+        这段代码表示阴影的水平位置为右移10px；
+        垂直位置为下移10px；
+        第三个10px代表阴影的模糊程度blur，我们也将它设置成20px；
+        第四个10px是阴影半径的意思；最后一个规定了阴影的颜色为rgba(255,255,0,0.5)。
+        也就是说，我们为class为test的div元素添加了一个偏离框，并且向右距离为10px、向下距离为10px、模糊半径为10px、阴影半径为10px的浅黄色的阴影。
+        根据上面的css代码，我们看一下同时设置了两个阴影的效果：
+        
+        </p>
+
+        <div class="box2">aaabbbccc</div>
+
+        <span class="s1">abcefg</span>
+</body>
+</html>

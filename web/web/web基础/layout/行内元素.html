@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+        }
+
+        /*  行内元素可以设置padding，border，margin
+            但是不改变垂直方向的布局 */
+        span {
+            padding: 50px;
+            border: 10px solid red;
+            margin: 50px;
+            background-color: yellow;
+        }
+
+        a {
+            height: 100px;
+            width: 100px;
+            border: 10px solid red;
+            background-color: green;
+            display: block;
+            /* display可以取值inline、block、inline-block、table、none */
+            visibility: visible;
+            /* visibility可以取值visible、hidden，虽然隐藏但是位置还保留 */
+        }
+    </style>
+</head>
+<body>
+    <div>abc</div>
+    <a href="http://www.baidu.com">baidu</a>
+    <span>123456</span><span>123456</span>
+    <div>abc</div>
+    
+</body>
+</html>

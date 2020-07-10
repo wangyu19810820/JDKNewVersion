@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            border: 10px solid red;
+            width: 800px;
+            height: 200px;
+        }
+        .box2 {
+            background-color: #bfa;
+            height: 200px;
+
+            /* width: auto;
+            margin-left: 100px;
+            margin-right: 200px; */
+
+            /* width: auto;
+            margin-left: auto;
+            margin-right: 200px; */
+
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+
+            /* 
+            margin-left+padding-left+width+padding-right+margin-right=父容器内容区宽度
+            如果表达式不满足，会调整auto项，或者margin-right的值
+            margin-left、width、margin-right三项可以设为auto
+            如果width设为auto，另两项如果是auto，值变为0
+            如果width为固定值，另两项为auto，则水平居中
+            */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

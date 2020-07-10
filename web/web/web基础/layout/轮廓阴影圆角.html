@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* * {
+            padding: 0;
+            margin: 0;
+        } */
+        .box1 {
+            height: 100px;
+            width: 100px;
+            background-color: #bfa;
+            border: 10px solid blue;
+        }
+        .box1:hover {
+            /* 轮廓，不影响布局 */
+            outline: 10px solid red;
+        }
+
+        .box2 {
+            height: 100px;
+            width: 100px;
+            background-color: #bfa;
+            /* 4个参数，向右位移，向下位移，模糊距离，阴影颜色 */
+            box-shadow:10px 10px 5px rgba(0, 0, 0, 0.5);
+
+            /* 圆角 */
+            border-top-left-radius: 10px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 30px;
+            /* 第一个参数水平半径，第二个参数垂直半径 */
+            border-bottom-left-radius: 40px 80px;
+            /*  4个参数依次是左上角、右上角、右下角、左下角。
+                以斜杠区分水平半径和垂直半径 */
+            border-radius: 10px 20px 30px 40px\80px;
+            /* 省略第四个参数，左下角应用对角的圆角尺寸
+               省略第三个参数，右下角也应用对角的圆角尺寸 */
+            border-radius: 10px 20px 30px;
+            border-radius: 10px 20px;
+
+            /* 圆形的写法 */
+            border-radius: 50%;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div><span>abc</span>
+    <br>
+    <div class="box2"></div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .box2 {
+            width: 50%;
+            height: 50%;
+            background-color: aqua;
+        }
+        .box3 {
+            /* 1em相当于1倍的font-size，10em相当于10倍的font-size */
+            width: 10em;
+            height: 10em;
+            font-size: 20px;
+            background-color: green;
+        }
+        .box4 {
+            /*  1rem相当于根元素1倍的font-size，
+                10rem相当于根元素10倍的font-size
+             */
+            width: 10rem;
+            height: 10rem;
+            font-size: 50px;
+            background-color: blueviolet;
+        }
+        html {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+
+    <div class="box3">abcd</div>
+
+    <div class="box4">abcd</div>
+</body>
+</html>
