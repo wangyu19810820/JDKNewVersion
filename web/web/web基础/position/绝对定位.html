@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1, .box2, .box3 {
+            height: 100px;
+            width: 100px;
+        }
+        .box1 {
+            background-color: #bbffaa;
+        }
+        .box4 {
+            height: 300px;
+            width: 300px;
+            background-color: blue;
+            position: relative;
+        }
+        .box5 {
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+            /*position: relative;*/
+        }
+        .box2 {
+            background-color: orange;
+            /*  开启绝对定位后，会从文档流脱离，使元素提升一个层级。
+                坐标相较于祖先元素中开启定位的元素，如果祖先元素都未开启定位，则相较于根元素
+            */
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+        }
+        .box3 {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box4">
+        <div class="box5">
+            <div class="box2"></div>
+        </div>
+    </div>
+    <div class="box3"></div>
+</body>
+</html>

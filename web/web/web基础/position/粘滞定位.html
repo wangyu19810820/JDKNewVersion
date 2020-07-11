@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            height: 2000px;
+        }
+        ul {
+            list-style: none;
+            margin: 0 auto;
+            width:1206px;
+            margin:100px auto 0 auto;
+            /* 到达某一高度时，固定不动 */
+            position: sticky;
+            top: 10px;
+        }
+
+        ul>li {
+            float:left;
+            background-color: #E8E7E3;
+        }
+
+        ul>li:hover {
+            background-color: #3F3F3F;
+        }
+
+        ul>li>a {
+            text-decoration: none;
+            padding: 0 42px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #777777;
+            display: inline-block;
+        }
+
+        ul>li>a:hover {
+            color: #E8E7E3;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><a href="http://wwww.baid.com">HTML/CSS</a></li>
+    <li><a href="http://wwww.baid.com">Browser Side</a></li>
+    <li><a href="http://wwww.baid.com">Server Side</a></li>
+    <li><a href="http://wwww.baid.com">Programming</a></li>
+    <li><a href="http://wwww.baid.com">XML</a></li>
+    <li><a href="http://wwww.baid.com">Web Building</a></li>
+    <li><a href="http://wwww.baid.com">Reference</a></li>
+    <div style="clear: both;"></div>
+</ul>
+</body>
+</html>
