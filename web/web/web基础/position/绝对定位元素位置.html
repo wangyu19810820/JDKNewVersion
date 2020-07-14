@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1 {
+            height: 500px;
+            width: 500px;
+            background-color: #bbffaa;
+            position: relative;
+        }
+
+        .box2 {
+            height: 100px;
+            width: 100px;
+            background-color: orange;
+            position: absolute;
+            /* left + margin-left + border-left + padding-left + width + padding-right + border-right + margin-right + right = 包含块内容区宽度
+               当过度约束时，right值会自动设置
+               left、margin-left、width、margin-right、right可以设置为auto
+               垂直方向，情况类似
+             */
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+        }
+        .box1 {
+            background-color: #bbffaa;
+            position: absolute;
+            z-index: 1;
+            /* z-index控制元素层级，层级越高，优先显示
+               无论如何设置，父元素不会遮盖子元素
+             */
+        }
+        .box2 {
+            background-color: orange;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            z-index: 2;
+        }
+        .box3 {
+            background-color: tomato;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            z-index: 3;
+        }
+        .box4 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3">
+        <div class="box4"></div>
+    </div>
+</body>
+</html>

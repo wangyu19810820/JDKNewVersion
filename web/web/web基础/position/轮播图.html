@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            list-style-type: none;
+        }
+        .img_ul {
+            position: relative;
+            margin: 20px auto 0px;
+            width: 590px;
+            height: 470px;
+        }
+        .img_ul li {
+            position: absolute;
+        }
+        .img_ul li:nth-child(1) {
+            z-index: 1;
+        }
+        .img_ul>div {
+            position: absolute;
+            z-index: 2;
+            bottom: 20px;
+            left: 40px;
+        }
+        .img_ul>div>a {
+            width: 10px;
+            height: 10px;
+            float: left;
+            margin-left: 5px;
+            border-radius: 50%;
+            background-clip: content-box;
+            border: 2px solid transparent;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        .img_ul>div>a.active, .img_ul>div>a:hover {
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <ul class="img_ul">
+        <li><a href="javascript:;"><img src="2.webp" alt=""></a></li>
+        <li><a href="javascript:;"><img src="3.webp" alt=""></a></li>
+        <li><a href="javascript:;"><img src="4.webp" alt=""></a></li>
+        <li><a href="javascript:;"><img src="590x470.jpg" alt=""></a></li>
+        <div>
+            <a class="active" href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </ul>
+</body>
+</html>
