@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1 {
+            /*text-decoration可选值：none、underline、overline（上划线）、line-through（删除线）
+              red dotted可省略*/
+            text-decoration: line-through red dotted;
+        }
+        .box2 {
+            /*white-space设置网页如何处理空白，可选值：normal，nowrap（不换行）、pre（保留原始空白）*/
+            white-space: nowrap;
+            width: 200px;
+            overflow: hidden;
+            /*text-overflow: ellipsis;文字多余显示省略号，需要配合width、white-space、overflow一起使用*/
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">今天天气真不错helloy</div>
+    <div class="box2">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid aperiam cum dicta dolore doloribus dolorum eligendi excepturi fugiat illo, incidunt ipsum minus neque nisi nostrum quidem quos velit vero.
+        aa
+            aa
+                aa
+    </div>
+</body>
+</html>

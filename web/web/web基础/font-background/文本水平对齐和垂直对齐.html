@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 500px;
+            border: 1px solid red;
+            /*text-align设置文本水平对齐，包含值：left、right、center、justify（两端对齐）*/
+            text-align: justify;
+        }
+        .div1 {
+            font-size: 50px;
+        }
+        span {
+            border: 1px solid blue;
+            font-size: 20px;
+            /*vertical-align设置文本垂直对齐，包含值：baseline、top、bottom、middle。
+              也可以直接设置数字*/
+            vertical-align: 20px;
+        }
+        p {
+            border: 1px solid red;
+        }
+        img {
+            /* vertical-align只要不是baseline，就可以去除图片底部与父元素之间的空白 */
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque natus quas? A eligendi esse nihil soluta. Commodi debitis deleniti et id laudantium modi, molestiae nemo nihil nostrum porro, repellat.
+    </div>
+    <div class="div1">
+        hellox<span>hellox</span>
+    </div>
+    <p>
+        <img src="590x470.jpg" alt="">
+    </p>
+</body>
+</html>

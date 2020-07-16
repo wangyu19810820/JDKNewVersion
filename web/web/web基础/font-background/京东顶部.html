@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            list-style-type: none;
+        }
+        .clearfix::before, .clearfix::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+        .outer {
+            background-color: #E3E4E5;
+            font: 12px 微软雅黑;
+            line-height: 30px;
+            height: 30px;
+        }
+        .inner {
+            width: 1190px;
+            margin: 0 auto;
+        }
+        .location {
+            float: left;
+            position: relative;
+        }
+        .current_city {
+            padding: 0px 5px 2px;
+            line-height: 28px;
+            border: 1px solid transparent;
+            border-bottom: none;
+            position: relative;
+            z-index: 999;
+        }
+        .city_list {
+            width: 320px;
+            height: 436px;
+            background-color: white;
+            border: 1px solid rgb(204, 204, 204);
+            display: none;
+            position: absolute;
+            top: 30px;
+        }
+        .location:hover .current_city {
+            background-color: white;
+            border: 1px solid rgb(204, 204, 204);
+            border-bottom: none;
+        }
+        .location:hover .city_list {
+            display: block;
+        }
+        ul {
+            float: right;
+        }
+        li {
+            float: left;
+        }
+        .outer span, .outer a, .outer i {
+            color: #999999;
+            text-decoration: none;
+        }
+        .location .fas {
+            color: #f10215;
+        }
+        .outer a:hover, a.highlight {
+            color: #f10215;
+        }
+        .line {
+            background-color: #999999;
+            width: 1px;
+            height: 10px;
+            margin: 10px 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner clearfix">
+            <div class="location">
+                <div class="current_city">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <a href="javascript:void(0)">北京</a>
+                </div>
+                <div class="city_list"></div>
+            </div>
+            <ul>
+                <li>
+                    <a href="javascript:;">你好，请登录</a>
+                    <a class="highlight" href="javascript:;">免费注册</a>
+                </li>
+                <li class="line"></li>
+                <li>
+                    <a href="javascript:;">我的订单</a>
+                </li>
+                <li class="line"></li>
+                <li>
+                    <a href="javascript:;">我的京东</a>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+                <li class="line"></li>
+                <li>
+                    <a href="javascript:;">京东会员</a>
+                </li>
+                <li class="line"></li>
+                <li>
+                    <a class="highlight" href="javascript:;">企业采购</a>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+                <li class="line"></li>
+                <li>
+                    <span>客户服务</span>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+                <li class="line"></li>
+                <li>
+                    <span>网站导航</span>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+                <li class="line"></li>
+                <li>
+                    <span>手机京东</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
