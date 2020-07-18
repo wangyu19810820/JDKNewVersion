@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            .div1 {
+                width: 500px;
+                height: 500px;
+                background-color: #bbffaa;
+                background-image: url("1.webp");
+                background-repeat: no-repeat;
+                /*background-position: -50px 150px;*/
+                border: 10px double red;
+                padding: 10px;
+                /*background-clip设置背景的范围: border-box（默认）,padding-box,content-box*/
+                background-clip: border-box;
+                /*background-origin设置背景图片原点：border-box,padding-box（默认）,content-box*/
+                background-origin: padding-box;
+            }
+            .div2 {
+                width: 500px;
+                height: 500px;
+                background-color: #bbffaa;
+                background-image: url("aa.jpg");
+                /*background-size设置背景图片宽、高。
+                还可以设置cover(图片铺满，图片比例不变)、contain(最大限度完整显示图片，图片比例不变)*/
+                background-size: contain;
+                background-repeat: no-repeat;
+                overflow: auto;
+            }
+            .div3 {
+                width: 200px;
+                height: 1000px;
+                background-repeat: no-repeat;
+                background-image: url("1.webp");
+                background-position: 0 150px;
+                /*background-attachment背景是否随滚动条滚动：scroll（默认值滚动）、fixed（固定不动）*/
+                background-attachment: fixed;
+            }
+            .div4 {
+                width: 500px;
+                height: 500px;
+                padding: 10px;
+                border: 10px double red;
+                /*background设置背景相关的属性，顺序可颠倒，可省略
+                  size需写在position后面，并用斜杠/分隔
+                  origin写在clip前面*/
+                background: #bbffaa url("1.webp") no-repeat left top/200px auto border-box content-box;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="div1"></div>
+        <div class="div2">
+            <div class="div3">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam cupiditate debitis, eius facilis inventore ipsam magnam magni maxime nemo nostrum quaerat, similique sint tempora? Illo obcaecati officiis optio pariatur ullam?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, aliquam aliquid architecto culpa cum debitis dolore ex excepturi facilis hic iste itaque neque, nihil obcaecati praesentium quod reiciendis sunt vel?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dicta magnam odit quibusdam quos. Accusantium animi consequatur dolorum earum numquam odio provident reprehenderit sint voluptate voluptatum? Eum iure nemo neque?
+            </div>
+        </div>
+        <div class="div4"></div>
+    </body>
+</html>
