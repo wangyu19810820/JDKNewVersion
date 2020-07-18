@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1 {
+            width: 300px;
+            height: 300px;
+            /*
+            background-image: radial-gradient(大小 at 位置, 颜色 位置, 颜色 位置...);
+            大小:circle圆形
+                ellipse椭圆
+                closest-side最近边，closest-corner最近角，
+                farthest-side最远边，farthest-corner最远角
+            */
+            background-image: radial-gradient(closest-side at 100px 100px, red, yellow);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>
