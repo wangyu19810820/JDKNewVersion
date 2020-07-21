@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            margin: 0 auto;
+            width: 50%;
+            border: 1px solid black;
+            /* 表格单元格间距 */
+            border-spacing: 10px;
+            /* 表格单元格间距塌陷，边框合并 */
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid black;
+            height: 100px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        /* tr默认自动装在tbody下 */
+        tbody > tr:nth-child(odd) {
+            background-color: #bbffaa;
+        }
+
+        .box1 {
+            width: 300px;
+            height: 300px;
+            background-color: orange;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <table>
+        <tr>
+            <td>学号</td>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>年龄</td>
+            <td>地址</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>孙悟空</td>
+            <td>男</td>
+            <td>18</td>
+            <td>花果山</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>猪八戒</td>
+            <td>男</td>
+            <td>28</td>
+            <td>高老庄</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>沙和尚</td>
+            <td>男</td>
+            <td>38</td>
+            <td>流沙河</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>唐僧</td>
+            <td>男</td>
+            <td>16</td>
+            <td>女儿国</td>
+        </tr>
+    </table>
+</body>
+</html>

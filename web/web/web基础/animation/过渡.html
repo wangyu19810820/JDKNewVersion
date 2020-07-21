@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1 {
+            width: 600px;
+            height: 600px;
+            background-color: silver;
+        }
+
+        .box1 div {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 100px;
+        }
+
+        .box2 {
+            background-color: #bbffaa;
+            /*transition: all 2s;*/
+            /*过渡的属性*/
+            transition-property: height,width,margin-left;
+            /*持续时间*/
+            transition-duration: 2s;
+            /*动画效果，取值：ease、ease-in、ease-out、ease-in-out*/
+            /*https://cubic-bezier.com*/
+            /*transition-timing-function: cubic-bezier(.32,1.26,.61,-0.31);*/
+            /*transition-timing-function: steps(2, start);分两步执行
+              第二个参数有start、end（默认），在时间段的开始或结束点启动变化*/
+            transition-timing-function: steps(2, start);
+            /*transition-delay: 2s;动画延迟2s再执行*/
+            transition-delay: 2s;
+        }
+
+        .box3 {
+            transition: all 2s;
+            background-color: orange;
+        }
+
+        .box1:hover div {
+            /*width: 200px;*/
+            /*height: 200px;*/
+            margin-left: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+</html>

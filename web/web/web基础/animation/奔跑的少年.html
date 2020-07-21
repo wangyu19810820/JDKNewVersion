@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1 {
+            height: 256px;
+            width: 256px;
+            margin: 0 auto;
+            background-image: url("bg2.png");
+            animation: test steps(6) infinite 1s;
+        }
+
+        @keyframes test {
+            from{
+                background-position: 0 0;
+            }
+            to {
+                background-position: -1536px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>
