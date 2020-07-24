@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            border: 10px solid red;
+            background-color: #bbffaa;
+            /* transform的变形不影响其它元素 */
+            /* translateX()沿x轴平移 translateY()沿y轴平移 translateZ()沿z轴平移 */
+            /* translateX(50%)平移自身宽度的50% */
+            transform: translateX(100%) translateY(100px);
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+
+        .box3 {
+            /* 水平居中、垂直居中 */
+            background-color: tomato;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        .box4 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin-top: 20px;
+            transition: .3s;
+        }
+
+        .box4:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3">
+        aaaaaaaaaaaaaaaaaaaaaa <br>
+        aaaaaaaaaaaaaaaaaaaaaa <br>
+        aaaaaaaaaaaaaaaaaaaaaa <br>
+        aaaaaaaaaaaaaaaaaaaaaa <br>
+    </div>
+    <div class="box4"></div>
+</body>
+</html>

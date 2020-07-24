@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html {
+            /* perspective设置视距，html到人眼的距离 */
+            perspective: 800px;
+        }
+
+        body {
+            border: 1px solid red;
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: #bbffaa;
+            margin: 200px auto;
+            transition: 2s;
+        }
+
+        body:hover .box1 {
+            /* 默认情况，网页不支持透视，要开启透视，需要开启html上的视距 */
+            transform: translateZ(400px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

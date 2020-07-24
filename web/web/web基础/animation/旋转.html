@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html {
+            /* perspective设置视距，html到人眼的距离 */
+            perspective: 800px;
+        }
+
+        body {
+            border: 1px solid red;
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: #bbffaa;
+            margin: 200px auto;
+            transition: 2s;
+
+            /* backface-visibility取值：visible默认，显示背面 hidden不显示背面 */
+            backface-visibility: hidden;
+        }
+
+        body:hover .box1 {
+            /* rotateX沿x轴旋转，rotateY沿y轴旋转，rotateZ沿z轴旋转 */
+            /*transform:rotateZ(1turn);*/
+            /*transform: rotateX(90deg);*/
+            /* 先沿y轴旋转180度，再向后移动400px */
+            /*transform: rotateY(180deg) translateZ(400px);*/
+            /* 先向前移动400px，再沿y轴旋转180度 */
+            transform: translateZ(400px) rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <img src="3.jpg" alt="">
+    </div>
+</body>
+</html>
