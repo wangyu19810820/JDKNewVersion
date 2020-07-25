@@ -1,0 +1,6 @@
+body {
+  background-color: #bfa;
+}
+body div {
+  border: 10px solid red;
+}

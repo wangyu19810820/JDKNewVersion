@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: #bbffaa;
+            margin: 0 auto;
+            transition: 2s;
+            /* 缩放的原点，默认是center */
+            transform-origin: 0 0;
+        }
+        .box1:hover {
+            /* x轴缩放为2倍，y轴缩放为0.5倍 */
+            transform: scaleX(2) scaleY(0.5);
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            overflow: hidden;
+        }
+        img {
+            transition: .5s;
+        }
+        img:hover {
+            /* x轴和y轴都缩放1.2倍 */
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2">
+        <img src="3.jpg" width="100%">
+    </div>
+</body>
+</html>
