@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 媒体类型可以取值为：all、print、screen、speech */
+        /* only可省略，兼容旧设备 */
+        /* 
+        @media only screen {
+            body {
+                background-color:#bfa;
+            }
+        } 
+        */
+
+        /* 用逗号连接不同媒体类型，表示或的意思 */
+        /*         
+        @media screen, print {
+            body {
+                background-color:#bfa;
+            }
+        } 
+        */
+
+        /* 宽度等于500px时的样式 */
+        /* 
+        @media (width: 500px) {
+            body {
+                background-color:#bfa;
+            }
+        } 
+        */
+
+        /* 逗号表示或，and表示与的意思 */
+        /* 
+        @media (min-width: 700px) , (max-width: 500px) {
+            body {
+                background-color:#bfa;
+            }
+        }   
+        */
+                
+        @media (min-width: 500px) and (max-width: 700px) {
+            body {
+                background-color:#bfa;
+            }
+        }         
+        
+
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

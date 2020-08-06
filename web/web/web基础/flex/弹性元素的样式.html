@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            width: 800px;
+            list-style: none;
+            border: 10px solid red;
+            display: flex;
+            flex-direction: row;
+        }
+
+        li {
+            width: 200px;
+            height: 100px;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+            /* 弹性容器空间富余，弹性元素增长系数 */
+            flex-grow: 0;
+            /* 弹性容器空间不足，弹性元素收缩系数，
+               实际收缩量和系数、弹性元素长度相关 */
+            flex-shrink: 1;
+            /* 弹性元素基础长度，
+               当flex-direction: row，其值是宽度
+               当flex-direction: column，其值是高度
+               默认值为auto，使用元素自身的宽和高 */
+            flex-basis: 100px;
+            /* 简写，顺序为增长系数、收缩系数、基础长度
+               initial相当于0 1 auto
+               auto相当于1 1 auto
+               none相当于0 0 auto
+             */
+            flex: auto;
+        }
+
+        li:nth-child(1) {
+            background-color: #bfa;
+            /* order决定弹性元素的排列顺序 */
+            order: 3;
+        }
+
+        li:nth-child(2) {
+            background-color: pink;
+            order: 2;
+        }
+
+        li:nth-child(3) {
+            background-color: orange;
+            order: 1;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+</body>
+</html>

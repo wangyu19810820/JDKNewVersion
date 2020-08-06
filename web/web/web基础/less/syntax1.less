@@ -1,0 +1,87 @@
+.box1 {
+    .box2 {
+        color: #bfa;
+    }
+    // 子元素选择器
+    > .box3 {
+        color: #bfa;
+        &:hover {
+            color: #bfa;
+        }
+    }
+    // &代表外层选择器
+    &:hover {
+        color: #bfa;
+    }
+    // 使用&后，不会再嵌套外层选择器了
+    div & {
+        color: #bfa;
+    }
+}
+
+.button {
+    &-ok {
+        color: #bfa;
+    }
+    &-cancel {
+        color: #bfa;
+    }
+}
+
+.p1 {
+    color: #bfa;
+}
+// p2扩展p1
+.p2:extend(.p1) {
+    width: 100px;
+}
+// p3扩展p1
+.p3 {
+    &:extend(.p1);
+    width: 100px;
+}
+
+.p4 {
+    // p4混合了p1
+    .p1();
+    width: 100px;
+}
+
+// p5被混合入其它选择器，本身不会被编译入css
+.p5() {
+    color: #bfa;
+}
+
+.p6 {
+    .p5;
+    width: 100px;
+}
+
+// 混合函数带参数，参数带默认值
+.test(@w:100px, @h:100px, @color:red) {
+    width: @w;
+    height: @h;
+    border: 1px solid @color;
+}
+
+div {
+    // .test(150px, 200px, #bfa);
+    .test(@color:blue, @w:200px, @h:300px);
+}
+
+span {
+    color: average(red, blue);
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+  
+body {
+    &:extend(html);
+    background-color: #bfa;
+    &:hover {
+        background-color: darken(#bfa, 10%);
+    }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            width: 600px;
+            height: 800px;
+            list-style: none;
+            border: 10px solid red;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            /* 
+                align-items元素在辅轴上如何对齐，取值：
+                    stretch默认值，元素在行内有相同长度
+                    flex-start元素不拉伸沿辅轴起边对齐
+                    flex-end元素沿辅轴终边对齐
+                    center元素沿辅轴居中对齐
+                    baseline元素沿辅轴基线对齐
+             */
+            align-items: baseline;
+
+            /* 
+                align-content辅轴空白空间分布，取值：
+                    flex-start元素沿辅轴起边排列
+                    flex-end元素沿辅轴终边排列
+                    center元素居中排列
+                    space-around空白分布到元素两侧
+                    space-evenly空白均分到元素一侧
+                    space-between空白均分到元素间
+             */
+            align-content: flex-start;
+        }
+
+        li {
+            width: 200px;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+            flex-shrink: 0;
+        }
+
+        li:nth-child(1) {
+            background-color: #bfa;
+            /* 覆盖当前弹性元素的align-items */
+            align-self: stretch;
+        }
+
+        li:nth-child(2) {
+            background-color: pink;
+        }
+
+        li:nth-child(3) {
+            background-color: orange;
+        }
+
+        li:nth-child(4) {
+            background-color: yellow;
+        }
+
+        li:nth-child(5) {
+            background-color: chocolate;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2 <div>2</div></li>
+        <li>3 <div>3</div><div>3</div></li>
+        <li>1</li>
+        <li>2 <div>2</div></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,59 @@
+.box1 .box2 {
+  color: #bfa;
+}
+.box1 > .box3 {
+  color: #bfa;
+}
+.box1 > .box3:hover {
+  color: #bfa;
+}
+.box1:hover {
+  color: #bfa;
+}
+div .box1 {
+  color: #bfa;
+}
+.button-ok {
+  color: #bfa;
+}
+.button-cancel {
+  color: #bfa;
+}
+.p1,
+.p2,
+.p3 {
+  color: #bfa;
+}
+.p2 {
+  width: 100px;
+}
+.p3 {
+  width: 100px;
+}
+.p4 {
+  color: #bfa;
+  width: 100px;
+}
+.p6 {
+  color: #bfa;
+  width: 100px;
+}
+div {
+  width: 200px;
+  height: 300px;
+  border: 1px solid blue;
+}
+span {
+  color: #800080;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  background-color: #bfa;
+}
+body:hover {
+  background-color: #92ff77;
+}
